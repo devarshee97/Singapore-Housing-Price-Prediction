@@ -11,7 +11,7 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
 
-flask_app = Flask(__name__)
+app = Flask(__name__)
 infile = open("rf.pkl", 'rb')
 model = pickle.load(infile)
 infile.close()
@@ -27,7 +27,7 @@ df_train_sc = sc.fit_transform(df_train)
 
 
 
-@flask_app.route("/")
+@app.route("/")
 @cross_origin()
 def home():
     return render_template("index.html")
@@ -35,7 +35,7 @@ def home():
 
 
 
-@flask_app.route("/predict", methods = ["GET", "POST"])
+@app.route("/predict", methods = ["GET", "POST"])
 @cross_origin()
 def predict():
     if request.method == "POST":
@@ -75,4 +75,4 @@ def predict():
     return render_template("index.html")
 
 if __name__=="__main__":
-    flask_app.run(debug=True)
+    app.run(debug=True)
