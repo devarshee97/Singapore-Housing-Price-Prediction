@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSING PRICE PREDICTION</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">HOUSING PRICE PREDICTION</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Town</h5>
+                            <!-- Departure -->
+                            <select name="Town" id="Town" required="required">
+                                <option value="ANG MO KIO">ANG MO KIO</option>
+                                <option value="BEDOK">BEDOK</option>
+                                <option value="BISHAN">BISHAN</option>
+                                <option value="BUKIT BATOK">BUKIT BATOK</option>
+                                <option value="BUKIT MERAH">BUKIT MERAH</option>
+                                <option value="BUKIT PANJANG">BUKIT PANJANG</option>
+                                <option value="BUKIT TIMAH">BUKIT TIMAH</option>
+                                <option value="CHOA CHU KANG">CHOA CHU KANG</option>
+                                <option value="CLEMENTI">CLEMENTI</option>
+                                <option value="GEYLANG">GEYLANG</option>
+                                <option value="HOUGANG">HOUGANG</option>
+                                <option value="JURONG EAST">JURONG EAST</option>
+                                <option value="JURONG WEST">JURONG WEST</option>
+                                <option value="KALLANG/WHAMPOA">KALLANG/WHAMPOA</option>
+                                <option value="MARINE PARADE">MARINE PARADE</option>
+                                <option value="PASIR RIS">PASIR RIS</option>
+                                <option value="PUNGGOL">PUNGGOL</option>
+                                <option value="QUEENSTOWN">QUEENSTOWN </option>
+                                <option value="SEMBAWANG">SEMBAWANG</option>
+                                <option value="SENGKANG">SENGKANG</option>
+                                <option value="SERANGOON">SERANGOON</option>
+                                <option value="TAMPINES">TAMPINES</option>
+                                <option value="TOA PAYOH">TOA PAYOH</option>
+                                <option value="WOODLANDS">WOODLANDS</option>
+                                <option value="YISHUN">YISHUN</option>
+
+
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Flat model</h5>
+                            <!-- Arrival -->
+                            <select name="Flat_model" id="Flat_model" required="required">
+                                <option value="2-room">2-room</option>
+                                <option value="Adjoined flat">Adjoined flat</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="DBSS">DBSS</option>
+                                <option value="Improved">Improved</option>
+                                <option value="Improved-Maisonette">Improved-Maisonette</option>
+                                <option value="Maisonette">Maisonette</option>
+                                <option value="Model A">Model A</option>
+                                <option value="Model A-Maisonette">Model A-Maisonette</option>
+                                <option value="Model A2">Model A2</option>
+                                <option value="Multi Generation">Multi Generation</option>
+                                <option value="New Generation">New Generation</option>
+                                <option value="Premium Apartment">Premium Apartment</option>
+                                <option value="Premium Apartment Loft">Premium Apartment Loft</option>
+                                <option value="Premium Maisonette">Premium Maisonette</option>
+                                <option value="Simplified">Simplified</option>
+                                <option value="Standard">Standard</option>
+                                <option value="Terrace">Terrace</option>
+                                <option value="Type S1">Type S1</option>
+                                <option value="Type S2">Type S2</option>
+
+
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Total rooms </h5>
+                            <!-- Source -->
+                            <input  name="Total_rooms" id="Total_rooms" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Floor area</h5>
+                            <!-- Destination -->
+                            <input  name="floor_area_sqm" id="floor_area_sqm" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Lease starting year</h5>
+                            <!-- Source -->
+                            <input  name="lease_commence_date" id="lease_commence_date" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total number of storeys</h5>
+                            <!-- Destination -->
+                            <input  name="Max_storeys" id="Max_storeys" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Remaining years of lease</h5>
+                            <!-- Source -->
+                            <input  name="remaining_years_of_lease" id="remaining_years_of_lease" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Registration year</h5>
+                            <!-- Destination -->
+                            <input  name="registration_year" id="registration_year" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+        <p>©2021 Devarshee Sandilya</p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
