@@ -1,1 +1,1 @@
-# Singapore-Housing-Price-Prediction
+# Singapore Housing-Price Prediction
