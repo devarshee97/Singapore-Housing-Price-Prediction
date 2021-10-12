@@ -16,5 +16,7 @@ The dataset is obtained from https://data.gov.sg/dataset/resale-flat-prices thro
  * Performance metric used is Root Mean Squared Error
  * A slight improvement in performance was noticed after scaling features with standard scaler
  # Deployment(incomplete):
- * **Back end** developed using **Flask**
+ * **Back end** developed using **Flask** and application runs smoothly within local pc
  * 
+ * The main issue being faced is that the pickle file is of size 400 Mb and thus, I am unable to directly upload the same in Github and threfore deploy in Heroku. I have experimented with numerious alternatives including the most popular one being Git Large File Storage. However, there seems to be some unresolved error in the latter as well.
+ * Hence, I decided to deploy the app in Google Cloud Platform. After following the necessary steps I find that the app successfully deploys, however fails to run in the website with error 500. I am still working on this issue to configure what could be the root cause of the problem.
